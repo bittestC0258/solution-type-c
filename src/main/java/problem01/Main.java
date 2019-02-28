@@ -39,6 +39,27 @@ public class Main {
 	}
 	
 	public static boolean checkAnswer(int answer) {
-		return true;
+		
+		if(answer == randomNumber) {
+			count++;
+			return true;
+		}
+			
+		
+		if(answer<min) {
+			System.out.println(min+"이상의 수를 입력해주셔야 합니다.");
+			return false;
+		}
+		
+		if(answer <=max) {
+			if(answer>randomNumber)
+				max = answer;
+			else
+				min = answer;				
+		}
+	
+		count++;
+	
+		return false;
 	}
 }
